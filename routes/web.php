@@ -15,3 +15,4 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+Route::post('/', [AdminController::class, 'save'])->name('admin.save');

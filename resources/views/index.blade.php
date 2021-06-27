@@ -48,5 +48,23 @@
     </tr>
   </tbody>
 </table>
+
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" action="{{ route('admin.save')}}" method="post">
+      @csrf
+      <input type="text" placeholder="Nome" name="nome"/>
+      {{$errors->has('nome') ? $errors->first('nome'): '' }}
+      <input type="text" placeholder="Email" name="email"/>
+      {{$errors->has('email') ? $errors->first('email'): '' }}
+      <input type="text" placeholder="Bio" name="bio"/>
+      {{$errors->has('bio') ? $errors->first('bio'): '' }}
+      <button type="submit">Registrar</button>
+      <p class="message">Saint CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
+    </form>
+  </div>
+</div>
+
+
   </body>
 </html>
