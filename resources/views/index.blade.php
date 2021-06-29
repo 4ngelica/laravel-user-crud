@@ -13,60 +13,40 @@
 
   <body>
     <table class="users">
-  <thead>
-    <tr>
-      <th class="row-1 row-ID">ID</th>
-      <th class="row-2 row-name">Nome</th>
-      <th class="row-3 row-job">Bio</th>
-      <th class="row-4 row-email">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0001</td>
-      <td>Johnny Five</td>
-      <td>Robotin'</td>
-      <td>need@input.com</td>
-    </tr>
-    <tr>
-      <td>0002</td>
-      <td>Super Superlonglastnamesmith</td>
-      <td>Doin' stuff</td>
-      <td>doing@stuff.com</td>
-    </tr>
-    <tr>
-      <td>0003</td>
-      <td>Roger Wilco</td>
-      <td>Truckdrivin'</td>
-      <td>roger@wilco.com</td>
-    </tr>
-    <tr>
-      <td>0004</td>
-      <td>Mad Hatter</td>
-      <td>Hat Makin'</td>
-      <td>loves@mercury.com</td>
-    </tr>
-  </tbody>
-</table>
+      <thead>
+        <tr>
+          <th class="row-1 row-ID">ID</th>
+          <th class="row-2 row-name">Nome</th>
+          <th class="row-3 row-job">Bio</th>
+          <th class="row-4 row-email">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($user_list as $key => $user_list)
+          <tr>
+            <td>{{$user_list->id}}</td>
+            <td>{{$user_list->nome}}</td>
+            <td>{{$user_list->bio}}</td>
+            <td>{{$user_list->email}}</td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
 
-<div class="login-page">
-  <div class="form">
-    <form class="login-form" action="{{ route('admin.save')}}" method="post">
-      @csrf
-      <input type="text" placeholder="Nome" name="nome"/>
-      {{$errors->has('nome') ? $errors->first('nome'): '' }}
-      <input type="text" placeholder="Email" name="email"/>
-      {{$errors->has('email') ? $errors->first('email'): '' }}
-      <input type="text" placeholder="Bio" name="bio"/>
-      {{$errors->has('bio') ? $errors->first('bio'): '' }}
-      <button type="submit">Registrar</button>
-      <p class="message">Saint CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
-    </form>
-  </div>
-</div>
-
-{{$user_list}}
-
-
+    <div class="login-page">
+      <div class="form">
+        <form class="login-form" action="{{ route('admin.save')}}" method="post">
+          @csrf
+          <input type="text" placeholder="Nome" name="nome"/>
+          {{$errors->has('nome') ? $errors->first('nome'): '' }}
+          <input type="text" placeholder="Email" name="email"/>
+          {{$errors->has('email') ? $errors->first('email'): '' }}
+          <input type="text" placeholder="Bio" name="bio"/>
+          {{$errors->has('bio') ? $errors->first('bio'): '' }}
+          <button type="submit">Registrar</button>
+          <p class="message">Saint CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

@@ -20,7 +20,6 @@ class AdminController extends Controller
         'bio' => 'required'
       ]);
       UserList::create($request->all());
-      dd(UserList::all());
       return redirect()->route('admin.index');
     }
 }
