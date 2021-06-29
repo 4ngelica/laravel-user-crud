@@ -16,8 +16,8 @@
   <thead>
     <tr>
       <th class="row-1 row-ID">ID</th>
-      <th class="row-2 row-name">Name</th>
-      <th class="row-3 row-job">Job</th>
+      <th class="row-2 row-name">Nome</th>
+      <th class="row-3 row-job">Bio</th>
       <th class="row-4 row-email">Email</th>
     </tr>
   </thead>
@@ -64,6 +64,8 @@
     </form>
   </div>
 </div>
+
+{{$user_list}}
 
 
   </body>

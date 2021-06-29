@@ -9,7 +9,8 @@ use App\Models\UserList;
 class AdminController extends Controller
 {
     public function index(){
-      return view('index');
+      $users = UserList::all();
+      return view('index', ['user_list'=>$users]);
     }
 
     public function save(Request $request){
@@ -19,6 +20,7 @@ class AdminController extends Controller
         'bio' => 'required'
       ]);
       UserList::create($request->all());
+      dd(UserList::all());
       return redirect()->route('admin.index');
     }
 }
