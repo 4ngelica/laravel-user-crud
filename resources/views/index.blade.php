@@ -54,7 +54,7 @@
               </form> --}}
             </td>
           </tr>
-          <div class="login-page" id="{{$user_list->id}}" style="display: none;">
+          {{-- <div class="login-page" id="{{$user_list->id}}" style="display: none;">
             <div class="form">
               Atualizar registro
               <form class="login-form" action="{{ route('admin.save')}}" method="post">
@@ -70,7 +70,7 @@
                 <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
               </form>
             </div>
-          </div>
+          </div> --}}
         @endforeach
 
       </tbody>
@@ -97,6 +97,24 @@
           <input type="text" placeholder="Bio" name="bio"/>
           {{$errors->has('bio') ? $errors->first('bio'): '' }}
           <button type="submit">Registrar</button>
+          <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="login-page" id="formupdate" style="display: none;">
+      <div class="form">
+        Atualizar registro
+        <form class="login-form" action="{{ route('admin.save')}}" method="post">
+          @csrf
+          <input type="text" placeholder="{{$user_list->nome}}" name="nome"/>
+          {{$errors->has('nome') ? $errors->first('nome'): '' }}
+          <input type="text" placeholder="{{$user_list->email}}" name="email"/>
+          {{$errors->has('email') ? $errors->first('email'): '' }}
+          <input type="text" placeholder="{{$user_list->bio}}" name="bio"/>
+          {{$errors->has('bio') ? $errors->first('bio'): '' }}
+          <button type="submit">Atualizar</button>
+          <button type="button" class="cancel">Cancelar</button>
           <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
         </form>
       </div>
