@@ -13,6 +13,23 @@ class AdminController extends Controller
       return view('index', ['user_list'=>$users]);
     }
 
+    public function delete($id)
+   {
+       $user = UserList::find($id);
+       $user->delete();
+       return redirect()->route('admin.index');
+   }
+
+   public function update($id)
+  {
+      $user = UserList::find($id);
+      $user->nome = Input::get('nome');
+      $user->email = Input::get('email');
+      $user->bio = Input::get('bio');
+      $user->save();
+      return redirect()->route('admin.index');
+  }
+
     public function save(Request $request){
       $request->validate([
         'nome' => 'required',

@@ -9,14 +9,19 @@
   width: 10%;
 }
 .row-name {
-  width: 40%;
-}
-.row-job {
-  width: 30%;
-}
-.row-email {
   width: 20%;
 }
+.row-job {
+  width: 35%;
+}
+.row-email {
+  width: 25%;
+}
+
+.row-action {
+  width: 10%;
+}
+
 .users td {
   white-space: nowrap;
   overflow: hidden;

@@ -16,3 +16,5 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 Route::post('/', [AdminController::class, 'save'])->name('admin.save');
+Route::get('/{id}', [AdminController::class, 'delete'])->name('admin.delete');
+Route::put('/{id}', [AdminController::class, 'update'])->name('admin.update');
