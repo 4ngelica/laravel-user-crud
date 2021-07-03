@@ -105,7 +105,7 @@
     <div class="login-page" id="formupdate" style="display: none;">
       <div class="form">
         Atualizar registro
-        <form class="login-form" action="{{ route('admin.update',$user_list->id)}}" method="put">
+        <form class="login-form" id="update-form" action="" method="put">
           @csrf
           <input type="text" name="nome" id="update-nome"/>
           {{$errors->has('nome') ? $errors->first('nome'): '' }}
