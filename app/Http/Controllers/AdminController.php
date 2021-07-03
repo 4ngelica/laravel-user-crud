@@ -15,9 +15,9 @@ class AdminController extends Controller
 
     public function delete($id)
    {
-       $user = UserList::find($id);
-       $user->delete();
-       return redirect()->route('admin.index');
+      $user = UserList::find($id);
+      $user->delete();
+      return redirect()->route('admin.index');
    }
 
    public function update($id)

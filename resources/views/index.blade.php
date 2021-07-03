@@ -9,7 +9,7 @@
     <meta name="viewport" content="device-width, initial-scale=1.0">
     <title>User CRUD</title>
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
-    <script src="{{asset('js/app.js')}}" type="text/javascript"></script> 
+    <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
   </head>
 
   <body>
@@ -24,12 +24,18 @@
         </tr>
       </thead>
       <tbody>
+        <script>
+          const user = [];
+        </script>
         @foreach ($user_list as $key => $user_list)
           <tr>
+            <script>
+              user.push({!! $user_list->toJson()!!});
+            </script>
             <td>{{$user_list->id}}</td>
-            <td>{{$user_list->nome}}</td>
-            <td>{{$user_list->email}}</td>
-            <td>{{$user_list->bio}}</td>
+            <td id="nome">{{$user_list->nome}}</td>
+            <td id="email">{{$user_list->email}}</td>
+            <td id="bio">{{$user_list->bio}}</td>
             <td>
               <form action="{{ route('admin.delete',$user_list->id)}}" method="get">
                 @csrf
@@ -37,21 +43,29 @@
                 <button type="button">X</button>
                 </a>
               </form>
-
-              <form action="{{ route('admin.update',$user_list->id)}}" method="put">
+              {{-- <script>
+                var user = {!! $user_list->toJson() !!};
+              </script> --}}
+              {{-- <form action="{{ route('admin.update',$user_list->id)}}" method="put">
                 @csrf
-                <a href="{{ URL::to('/' . $user_list->id) }}">
-                <button type="button">U</button>
-                </a>
-              </form>
+                <a href="{{ URL::to('/' . $user_list->id) }}"> --}}
+                <button type="button" class="{{$user_list->id}}">U</button>
+                {{-- </a>
+              </form> --}}
             </td>
           </tr>
         @endforeach
       </tbody>
     </table>
-
-    <div class="login-page">
+    {{-- <script>
+      const TESTE = [];
+        @foreach ($user_list as $key => $user_list)
+          TESTE.push({!! $user_list->id!!});
+        @endforeach
+    </script> --}}
+    <div class="login-page" id="formstore">
       <div class="form">
+        Incluir usuário
         <form class="login-form" action="{{ route('admin.save')}}" method="post">
           @csrf
           <input type="text" placeholder="Nome" name="nome"/>
@@ -61,23 +75,25 @@
           <input type="text" placeholder="Bio" name="bio"/>
           {{$errors->has('bio') ? $errors->first('bio'): '' }}
           <button type="submit">Registrar</button>
-          <p class="message">Saint CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
+          <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
         </form>
       </div>
     </div>
 
-    <div class="login-page">
+    <div class="login-page" id="formupdate" style="display: none;">
       <div class="form">
+        Atualizar registro
         <form class="login-form" action="{{ route('admin.save')}}" method="post">
           @csrf
-          <input type="text" placeholder="Nome" name="nome"/>
+          <input type="text" placeholder="Nome" name="nnome"/>
           {{$errors->has('nome') ? $errors->first('nome'): '' }}
-          <input type="text" placeholder="Email" name="email"/>
+          <input type="text" placeholder="Email" name="nemail"/>
           {{$errors->has('email') ? $errors->first('email'): '' }}
-          <input type="text" placeholder="Bio" name="bio"/>
+          <input type="text" placeholder="Bio" name="nbio"/>
           {{$errors->has('bio') ? $errors->first('bio'): '' }}
-          <button type="submit">Registrar</button>
-          <p class="message">Saint CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
+          <button type="submit">Atualizar</button>
+          <button type="button" class="cancel">Cancelar</button>
+          <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
         </form>
       </div>
     </div>
