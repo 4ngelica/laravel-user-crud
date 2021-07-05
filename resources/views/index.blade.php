@@ -52,6 +52,9 @@
         @endforeach
       </tbody>
     </table>
+    @if (Session::has('flash'))
+      <h4 style="text-align: center;">{{Session::get("flash")}}</h4>
+    @endif
 
     <div class="register-page" id="formstore">
       <div class="form">
