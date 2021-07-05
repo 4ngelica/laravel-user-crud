@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
       var form_update_bio = document.getElementById("update-bio");
 
       // form_update_action.action = "{{ route('admin.update'," +  parseInt(values[0]) +")}}";
-      $('#update-form').attr("action", "http:\/\/localhost:8000\/update\/" +  parseInt(values[0]))
+      $('#update-form').attr("action", "http:\/\/localhost:8000\/" +  parseInt(values[0]))
       form_update_nome.value = values[1];
       form_update_email.value = values[2];
       form_update_bio.value = values[3];

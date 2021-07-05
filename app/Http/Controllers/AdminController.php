@@ -30,18 +30,15 @@ class AdminController extends Controller
        //   $user->update($request->except(['_token']));
        // }
 
-       $user = UserList::find($id);
-       $user->nome = Input::get('nome');
-       $user->email = Input::get('email');
-       $user->bio = Input::get('bio');
-       $user->update();
+       $user = UserList::where('id', $id);
+       $user->update($request->except("_token", "method"));
        return redirect()->route('admin.index');
    }
 
     public function delete($id)
    {
-      // $user = UserList::find($id);
-      // $user->delete();
+      $user = UserList::where('id', $id);
+      $user->delete();
       return redirect()->route('admin.index');
    }
 

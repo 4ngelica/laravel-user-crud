@@ -49,7 +49,7 @@
               {{-- <form action="{{ route('admin.update',$user_list->id)}}" method="put">
                 @csrf
                 <a href="{{ URL::to('/' . $user_list->id) }}"> --}}
-                <button type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->nome}},{{$user_list->email}},{{$user_list->bio}}" id="teste">U</button>
+                <button type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->nome}},{{$user_list->email}},{{$user_list->bio}}">U</button>
                 {{-- </a>
               </form> --}}
             </td>
@@ -105,7 +105,7 @@
     <div class="login-page" id="formupdate" style="display: none;">
       <div class="form">
         Atualizar registro
-        <form class="login-form" id="update-form" action="" method="put">
+        <form class="login-form" id="update-form" action="" method="post">
           @csrf
           <input type="text" name="nome" id="update-nome"/>
           {{$errors->has('nome') ? $errors->first('nome'): '' }}
