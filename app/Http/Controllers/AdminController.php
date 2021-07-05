@@ -23,18 +23,18 @@ class AdminController extends Controller
       return redirect()->route('admin.index');
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
    {
        // $user = UserList::find($id);
        // if($user){
        //   $user->update($request->except(['_token']));
        // }
+
        $user = UserList::find($id);
-       dd($user);
        $user->nome = Input::get('nome');
        $user->email = Input::get('email');
        $user->bio = Input::get('bio');
-       $user->save();
+       $user->update();
        return redirect()->route('admin.index');
    }
 
@@ -42,7 +42,7 @@ class AdminController extends Controller
    {
       // $user = UserList::find($id);
       // $user->delete();
-      // return redirect()->route('admin.index');
+      return redirect()->route('admin.index');
    }
 
 
