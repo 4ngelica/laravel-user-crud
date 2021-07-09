@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', 'laravel-user-crud.herokuapp.com/'),
+    'domain' => env('SESSION_DOMAIN', 'laravel-user-crud.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
