@@ -19,7 +19,7 @@
           <th class="row-1 row-ID">ID</th>
           <th class="row-2 row-name">Nome</th>
           <th class="row-4 row-email">Email</th>
-          <th class="row-3 row-job">Bio</th>
+          <th class="row-3 row-bio">Bio</th>
           <th class="row-4 row-action"></th>
           <th class="row-4 row-action"></th>
         </tr>
@@ -38,15 +38,15 @@
             <td id="email">{{$user_list->email}}</td>
             <td id="bio">{{$user_list->bio}}</td>
             <td>
+              <button type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->nome}},{{$user_list->email}},{{$user_list->bio}}">Editar</button>
+            </td>
+            <td>
               <form action="{{ route('admin.delete',$user_list->id)}}" method="get">
                 @csrf
                 <a href="{{ URL::to('/' . $user_list->id) }}">
                 <button type="button">X</button>
                 </a>
               </form>
-            </td>
-            <td>
-              <button type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->nome}},{{$user_list->email}},{{$user_list->bio}}">U</button>
             </td>
           </tr>
         @endforeach
