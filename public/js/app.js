@@ -5,17 +5,14 @@ window.addEventListener("load", function () {
 
   for (var i = 0; i < user.length; i++) {
     $("." + user[i].id).click(function(){
-      //value=[id,nome,email,bio]
-      // console.log(jQuery(this).attr("value")).explode(" ");
-      // form_update.placeholder = user[(jQuery(this).attr("value"))].nome;
+
       var values = (jQuery(this).attr("value").split(","));
       var form_update_action = document.getElementById("update-form");
       var form_update_nome = document.getElementById("update-nome");
       var form_update_email = document.getElementById("update-email");
       var form_update_bio = document.getElementById("update-bio");
 
-      // form_update_action.action = "{{ route('admin.update'," +  parseInt(values[0]) +")}}";
-      $('#update-form').attr("action", "http:\/\/localhost:8000\/" +  parseInt(values[0]))
+      $('#update-form').attr("action", "http:\/\/laravel-user-crud.herokuapp.com\/" +  parseInt(values[0]))
       form_update_nome.value = values[1];
       form_update_email.value = values[2];
       form_update_bio.value = values[3];
