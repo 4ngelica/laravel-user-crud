@@ -4,8 +4,8 @@
 
  <p align="center">
     <a href="#laravel-user-crud_about">About</a> • 
-    <a href="#laravel-user-crud_setup">Setup</a> • 
-    <a href="#laravel-user-crud_install">Demo</a>
+    <a href="#laravel-user-crud_install">Installation</a> • 
+    <a href="#laravel-user-crud_demo">Demo</a>
     <h3 align="center">User CRUD</h3>
 
   <p align="center">
@@ -22,11 +22,11 @@
 <div id="#laravel-user-crud_setup">
 <ul>
     <li>Laravel 8.48.1</li>
-    <li>Composer 2.0.11</li>
+    <li>Mysql</li>
 </ul> 
 </div>
 
-## :pushpin: Setup
+## :pushpin: Installation
 <p id="#laravel-user-crud_install">
 If you want to reproduce this project, follow these steps:
 
