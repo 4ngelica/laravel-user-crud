@@ -50,7 +50,7 @@ If you want to reproduce this project, follow these steps:
 • Done!
 
 ## :pushpin: Demo
-<p id="#laravel-user-crud_demo">You can access the demo <a href="https://youtu.be/VFwJNbv6L60">here</a>.  </p>
+<p id="#laravel-user-crud_demo">You can access the demo <a href="https://laravel-user-crud.herokuapp.com">here</a>.  </p>
 
 <footer>
     <hr></hr>
