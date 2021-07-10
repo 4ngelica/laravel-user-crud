@@ -17,7 +17,7 @@
       <thead>
         <tr>
           <th class="row-1 row-ID">ID</th>
-          <th class="row-2 row-name">Nome</th>
+          <th class="row-2 row-name">Name</th>
           <th class="row-4 row-email">Email</th>
           <th class="row-3 row-bio">Bio</th>
           <th class="row-4 row-action"></th>
@@ -34,11 +34,11 @@
               user.push({!! $user_list->toJson()!!});
             </script>
             <td>{{$user_list->id}}</td>
-            <td id="nome">{{$user_list->nome}}</td>
+            <td id="name">{{$user_list->name}}</td>
             <td id="email">{{$user_list->email}}</td>
             <td id="bio">{{$user_list->bio}}</td>
             <td>
-              <button type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->nome}},{{$user_list->email}},{{$user_list->bio}}">Editar</button>
+              <button type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->name}},{{$user_list->email}},{{$user_list->bio}}">Edit</button>
             </td>
             <td>
               <form action="{{ route('admin.delete',$user_list->id)}}" method="get">
@@ -52,22 +52,22 @@
         @endforeach
       </tbody>
     </table>
+
     @if (Session::has('flash'))
       <h4 style="text-align: center;">{{Session::get("flash")}}</h4>
     @endif
-
     <div class="register-page" id="formstore">
       <div class="form">
-        Incluir usuário
+        Register
         <form class="login-form" action="{{ route('admin.save')}}" method="post">
           @csrf
-          <input type="text" placeholder="Nome" name="nome"/>
-          {{$errors->has('nome') ? $errors->first('nome'): '' }}
+          <input type="text" placeholder="Name" name="name"/>
+          {{$errors->has('name') ? $errors->first('name'): '' }}
           <input type="text" placeholder="Email" name="email"/>
           {{$errors->has('email') ? $errors->first('email'): '' }}
           <input type="text" placeholder="Bio" name="bio"/>
           {{$errors->has('bio') ? $errors->first('bio'): '' }}
-          <button type="submit">Registrar</button>
+          <button type="submit">Save</button>
           <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
         </form>
       </div>
@@ -75,17 +75,17 @@
 
     <div class="update-page" id="formupdate" style="display: none;">
       <div class="form">
-        Atualizar registro
+        Edit User
         <form class="login-form" id="update-form" action="" method="post">
           @csrf
-          <input type="text" name="nome" id="update-nome"/>
-          {{$errors->has('nome') ? $errors->first('nome'): '' }}
+          <input type="text" name="name" id="update-name"/>
+          {{$errors->has('name') ? $errors->first('name'): '' }}
           <input type="text" name="email" id="update-email"/>
           {{$errors->has('email') ? $errors->first('email'): '' }}
           <input type="text" name="bio" id="update-bio"/>
           {{$errors->has('bio') ? $errors->first('bio'): '' }}
-          <button type="submit">Atualizar</button>
-          <button type="button" class="cancel">Cancelar</button>
+          <button type="submit">Save changes</button>
+          <button type="button" class="cancel">Cancel</button>
           <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
         </form>
       </div>

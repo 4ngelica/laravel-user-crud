@@ -17,17 +17,17 @@ class AdminController extends Controller
     public function save(Request $request){
 
       if(UserList::all()->count() == 5){
-        Session::flash("flash","Número máximo de registros atingido. Exclua um registro para inserir um novo.");
+        Session::flash("flash","Maximum number of records reached. Delete a record to insert a new one.");
         return redirect()->back();
       }
 
       $request->validate([
-        'nome' => 'required',
+        'name' => 'required',
         'email' => 'required',
         'bio' => 'required'
       ]);
       UserList::create($request->all());
-      Session::flash("flash","Usuário registrado com sucesso!");
+      Session::flash("flash","User created successfully.");
       return redirect()->route('admin.index');
     }
 
@@ -35,6 +35,7 @@ class AdminController extends Controller
    {
        $user = UserList::where('id', $id);
        $user->update($request->except("_token", "method"));
+       Session::flash("flash","User updated successfully.");
        return redirect()->route('admin.index');
    }
 
@@ -42,6 +43,7 @@ class AdminController extends Controller
    {
       $user = UserList::where('id', $id);
       $user->delete();
+      Session::flash("flash","User deleted successfully.");
       return redirect()->route('admin.index');
    }
 

@@ -15,7 +15,7 @@ class CreateUserListTable extends Migration
     {
         Schema::create('user_list', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('name');
             $table->string('email');
             $table->string('bio');
             $table->timestamps();

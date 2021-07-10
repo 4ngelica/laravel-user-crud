@@ -9,5 +9,5 @@ class UserList extends Model
 {
     use HasFactory;
     protected $table = "user_list";
-    protected $fillable = ['nome', 'email', 'bio'];
+    protected $fillable = ['name', 'email', 'bio'];
 }
