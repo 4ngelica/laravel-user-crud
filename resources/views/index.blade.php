@@ -38,13 +38,13 @@
             <td id="email">{{$user_list->email}}</td>
             <td id="bio">{{$user_list->bio}}</td>
             <td>
-              <button type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->name}},{{$user_list->email}},{{$user_list->bio}}">Edit</button>
+              <button id="edit-button" type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->name}},{{$user_list->email}},{{$user_list->bio}}">Edit</button>
             </td>
             <td>
               <form action="{{ route('admin.delete',$user_list->id)}}" method="get">
                 @csrf
                 <a href="{{ URL::to('/' . $user_list->id) }}">
-                <button type="button">X</button>
+                <button id="delete-button" type="button">X</button>
                 </a>
               </form>
             </td>
@@ -54,11 +54,11 @@
     </table>
 
     @if (Session::has('flash'))
-      <h4 style="text-align: center;">{{Session::get("flash")}}</h4>
+      <h4 class="flash" style="text-align: center;">{{Session::get("flash")}}</h4>
     @endif
     <div class="register-page" id="formstore">
       <div class="form">
-        Register
+        <h2 class="title">REGISTER</h2>
         <form class="login-form" action="{{ route('admin.save')}}" method="post">
           @csrf
           <input type="text" placeholder="Name" name="name"/>
@@ -75,7 +75,7 @@
 
     <div class="update-page" id="formupdate" style="display: none;">
       <div class="form">
-        Edit User
+        <h2 class="title">EDIT USER</h2>
         <form class="login-form" id="update-form" action="" method="post">
           @csrf
           <input type="text" name="name" id="update-name"/>
@@ -84,8 +84,10 @@
           {{$errors->has('email') ? $errors->first('email'): '' }}
           <input type="text" name="bio" id="update-bio"/>
           {{$errors->has('bio') ? $errors->first('bio'): '' }}
-          <button type="submit">Save changes</button>
+          <div class="buttons">
           <button type="button" class="cancel">Cancel</button>
+          <button type="submit">Save changes</button>
+          </div>
           <p class="message">User CRUD by <a href="http://www.github.com/4ngelica">4ngelica</a></p>
         </form>
       </div>

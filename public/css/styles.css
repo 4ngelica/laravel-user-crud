@@ -1,18 +1,22 @@
+/*************************/
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 .users {
   margin: 0 auto;
+  margin-top: 15px;
   table-layout: fixed;
-  width: 50%;
+  width: 70%;
   white-space: nowrap;
+  font-family: "Roboto", sans-serif;
 }
-/* Column widths are based on these cells */
 .row-ID {
-  width: 10%;
+  width: 5%;
 }
 .row-name {
   width: 20%;
 }
 .row-bio {
-  width: 35%;
+  width: 40%;
 }
 .row-email {
   width: 25%;
@@ -22,13 +26,42 @@
   width: 10%;
 }
 
+#edit-button, #delete-button{
+  color: white;
+  border: none;
+}
+
+#edit-button{
+background-color: #76b852;
+}
+
+#delete-button{
+background-color: red;
+}
+
+#edit-button:focus{
+  outline:none;
+}
+
+#delete-button:focus{
+  outline:none;
+}
+
+.flash{
+  width: 70%;
+  background-color: #76b852;
+  margin: 0 auto;
+  padding: 10px;
+  color: white;
+}
+
 .users td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .users th {
-  background: darkblue;
+  background: gray;
   color: white;
 }
 .users td,
@@ -36,12 +69,19 @@
   text-align: left;
   padding: 5px 10px;
 }
-.users tr:nth-child(even) {
-  background: lightblue;
+.users tr:nth-child(n) {
+  background: white;
 }
 
-/*************************/
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.users tr:nth-child(2n) {
+  background: #f2f2f2;
+}
+
+.title{
+  margin: 0 0 20px;
+  color: gray;
+  font-size: 24px;
+}
 
 .update-page, .register-page {
   width: 360px;
@@ -55,6 +95,7 @@
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
+  padding-top: 25px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -86,6 +127,12 @@
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
 }
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+}
+
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
@@ -132,11 +179,11 @@
   color: #EF3B3A;
 }
 body {
-  background: #76b852; /* fallback for old browsers */
+  background: #B6A1CD; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
   background: -moz-linear-gradient(right, #76b852, #8DC26F);
   background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);
+  background: linear-gradient(to left, #B6A1CD, #8DC26F);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
