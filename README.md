@@ -3,9 +3,9 @@
 </p>
 
  <p align="center">
-    <a href="#laravel-user-crud_about">About</a> • 
-    <a href="#laravel-user-crud_install">Installation</a> • 
-    <a href="#laravel-user-crud_demo">Demo</a>
+    <a href="#laravelUserCrud_about">About</a> • 
+    <a href="#laravelUserCrud_install">Installation</a> • 
+    <a href="#laravelUserCrud_demo">Demo</a>
     <h3 align="center">User CRUD</h3>
 
   <p align="center">
@@ -14,12 +14,12 @@
 
 
 ## :pushpin: About
-<p align="justify" id="#laravel-user-crud_about">
+<p align="justify" id="#laravelUserCrud_about">
    This repo is a base Laravel application to manage users with a simple interface that shows the registered users and lets you add/delete registers.
 </p>
 
 ## :pushpin: Setup
-<div id="#laravel-user-crud_setup">
+<div id="#laravelUserCrud_setup">
 <ul>
     <li>Laravel 8.48.1</li>
     <li>Mysql</li>
@@ -27,7 +27,7 @@
 </div>
 
 ## :pushpin: Installation
-<p id="#laravel-user-crud_install">
+<p id="#laravelUserCrud_install">
 If you want to reproduce this project, follow these steps:
 
 • download files or clone this repository: <br>
@@ -50,7 +50,7 @@ If you want to reproduce this project, follow these steps:
 • Done!
 
 ## :pushpin: Demo
-<p id="#laravel-user-crud_demo">You can access the demo <a href="http://laravel-user-crud.herokuapp.com">here</a>.  </p>
+<p id="#laravelUserCrud_demo">You can access the demo <a href="http://laravel-user-crud.herokuapp.com">here</a>.  </p>
 
 <footer>
     <hr></hr>
