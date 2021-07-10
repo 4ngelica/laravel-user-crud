@@ -3,9 +3,9 @@
 </p>
 
  <p align="center">
-    <a href="/#laravel-user-crud_about">About</a> • 
-    <a href="/#laravel-user-crud_install">Installation</a> • 
-    <a href="/#laravel-user-crud_demo">Demo</a>
+    <a href="#laravel-user-crud_about">About</a> • 
+    <a href="#laravel-user-crud_install">Installation</a> • 
+    <a href="#laravel-user-crud_demo">Demo</a>
     <h3 align="center">User CRUD</h3>
 
   <p align="center">
