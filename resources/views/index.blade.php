@@ -10,6 +10,7 @@
     <title>User CRUD</title>
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/0f6189f33e.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -38,13 +39,13 @@
             <td id="email">{{$user_list->email}}</td>
             <td id="bio">{{$user_list->bio}}</td>
             <td>
-              <button id="edit-button" type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->name}},{{$user_list->email}},{{$user_list->bio}}">Edit</button>
+              <button id="edit-button" type="button" class="{{$user_list->id}}" value="{{$user_list->id}},{{$user_list->name}},{{$user_list->email}},{{$user_list->bio}}"> <i class="fas fa-list"></i> </button>
             </td>
             <td>
               <form action="{{ route('admin.delete',$user_list->id)}}" method="get">
                 @csrf
                 <a href="{{ URL::to('/' . $user_list->id) }}">
-                <button id="delete-button" type="button">X</button>
+                <button id="delete-button" type="button"> <i class="fas fa-times"></i> </button>
                 </a>
               </form>
             </td>

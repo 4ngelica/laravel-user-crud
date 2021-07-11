@@ -29,6 +29,7 @@
 #edit-button, #delete-button{
   color: white;
   border: none;
+  border-radius: 5px;
 }
 
 #edit-button{
@@ -36,7 +37,7 @@ background-color: #76b852;
 }
 
 #delete-button{
-background-color: red;
+background-color: #EC5D57;
 }
 
 #edit-button:focus{
@@ -65,6 +66,13 @@ background-color: red;
   color: white;
 }
 .users td,
+.users th {
+  text-align: left;
+  padding: 5px 10px;
+}
+body > table > tbody > tr > td:nth-child(6){
+  padding-left: 0px;
+}
 .users th {
   text-align: left;
   padding: 5px 10px;
