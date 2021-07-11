@@ -71,6 +71,11 @@ background-color: #EC5D57;
 }
 body > table > tbody > tr > td:nth-child(6){
   padding-left: 0px;
+  padding-right: 0px;
+}
+body > table > tbody > tr > td:nth-child(7){
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .users th {
   text-align: left;
