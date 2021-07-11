@@ -203,15 +203,12 @@ body {
 @media (max-width: 515px){
   .users {
     min-width: 360px;
+    margin:0 auto;
+    margin-top: 15px;
   }
 }
 @media (max-width: 384px){
   .users {
     width: 100%;
-  }
-  .form{
-    margin: 0 auto;
-    width: 100%;
-    min-width: 100vw;
   }
 }
