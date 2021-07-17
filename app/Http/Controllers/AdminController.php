@@ -23,7 +23,7 @@ class AdminController extends Controller
 
       $request->validate([
         'name' => 'required',
-        'email' => 'required',
+        'email' => 'required|email',
         'bio' => 'required'
       ]);
       UserList::create($request->all());
@@ -34,7 +34,11 @@ class AdminController extends Controller
     public function update(Request $request, $id)
    {
        $user = UserList::where('id', $id);
-       $user->update($request->except("_token", "method"));
+       $user->update($request->validate([
+         'name' => 'required',
+         'email' => 'required|email',
+         'bio' => 'required'
+       ])->except("_token", "method"));
        Session::flash("flash","User updated successfully.");
        return redirect()->route('admin.index');
    }
