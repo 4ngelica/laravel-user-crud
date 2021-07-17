@@ -38,7 +38,7 @@ class AdminController extends Controller
          'name' => 'required',
          'email' => 'required|email',
          'bio' => 'required'
-       ])->except("_token", "method"));
+       ]));
        Session::flash("flash","User updated successfully.");
        return redirect()->route('admin.index');
    }
