@@ -15,7 +15,7 @@
 
 ## :pushpin: About
 <p align="justify" id="#laravelUserCrud_about">
-   This repo is a base Laravel application to manage users with a simple interface that shows the registered users and lets you add/delete registers.
+   This repo is a base Laravel application to manage users with a simple interface that shows the registered users and lets you add, update and delete registers.
 </p>
 
 ## :pushpin: Setup
